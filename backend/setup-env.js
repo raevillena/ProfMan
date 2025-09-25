@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 // Read the Firebase service account JSON
-const firebaseJson = JSON.parse(fs.readFileSync('profman-cc779-firebase-adminsdk-fbsvc-28773e2dea.json', 'utf8'));
+// Replace 'your-firebase-service-account.json' with your actual Firebase service account file
+const firebaseJson = JSON.parse(fs.readFileSync('your-firebase-service-account.json', 'utf8'));
 
 // Read the Google Drive OAuth JSON
-const driveJson = JSON.parse(fs.readFileSync('client_secret_720731353138-0o742e2e2p3nqtdgngeh5tb3r7drmh0f.apps.googleusercontent.com.json', 'utf8'));
+// Replace 'your-google-oauth-credentials.json' with your actual Google OAuth credentials file
+const driveJson = JSON.parse(fs.readFileSync('your-google-oauth-credentials.json', 'utf8'));
 
 // Generate environment content
 const envContent = `# Backend Development Environment Variables

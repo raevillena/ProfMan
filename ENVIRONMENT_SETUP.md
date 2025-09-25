@@ -89,13 +89,13 @@ VITE_API_BASE_URL=http://localhost:5000/api
 VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id
 
 # Firebase Configuration
-VITE_FIREBASE_API_KEY=AIzaSyCcSSQzNdJGpMOSpmtoxIBgKCQ_uFw2DA8
-VITE_FIREBASE_AUTH_DOMAIN=profman-cc779.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=profman-cc779
-VITE_FIREBASE_STORAGE_BUCKET=profman-cc779.firebasestorage.app
-VITE_FIREBASE_MESSAGING_SENDER_ID=89358236477
-VITE_FIREBASE_APP_ID=1:89358236477:web:d10f78cc745d38806f2354
-VITE_FIREBASE_MEASUREMENT_ID=G-05M3HRMPYD
+VITE_FIREBASE_API_KEY=your-firebase-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+VITE_FIREBASE_APP_ID=your-app-id
+VITE_FIREBASE_MEASUREMENT_ID=your-measurement-id
 ```
 
 ### Production Environment (`.env.production`)
@@ -106,13 +106,13 @@ VITE_API_BASE_URL=https://your-production-api.com/api
 VITE_GOOGLE_CLIENT_ID=your-production-google-oauth-client-id
 
 # Firebase Configuration
-VITE_FIREBASE_API_KEY=AIzaSyCcSSQzNdJGpMOSpmtoxIBgKCQ_uFw2DA8
-VITE_FIREBASE_AUTH_DOMAIN=profman-cc779.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=profman-cc779
-VITE_FIREBASE_STORAGE_BUCKET=profman-cc779.firebasestorage.app
-VITE_FIREBASE_MESSAGING_SENDER_ID=89358236477
-VITE_FIREBASE_APP_ID=1:89358236477:web:d10f78cc745d38806f2354
-VITE_FIREBASE_MEASUREMENT_ID=G-05M3HRMPYD
+VITE_FIREBASE_API_KEY=your-firebase-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+VITE_FIREBASE_APP_ID=your-app-id
+VITE_FIREBASE_MEASUREMENT_ID=your-measurement-id
 ```
 
 ## 🚀 Scripts and Commands

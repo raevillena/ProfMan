@@ -46,8 +46,9 @@ This guide will help you test the Firebase integration in ProfMan step by step.
    ```
 
 2. **Check Firebase Console:**
-   - Go to [Firebase Console](https://console.firebase.google.com/project/profman-cc779)
-   - Navigate to Firestore Database
+   - Go to [Firebase Console](https://console.firebase.google.com)
+   - Navigate to your project
+   - Go to Firestore Database
    - Verify that collections are created with test data
 
 ### Step 4: Test Authentication
@@ -134,8 +135,8 @@ This guide will help you test the Firebase integration in ProfMan step by step.
 ```
 [timestamp] ℹ️ Testing Firebase configuration...
 [timestamp] ✅ Firebase configuration loaded successfully
-[timestamp] ℹ️ Project ID: profman-cc779
-[timestamp] ℹ️ Auth Domain: profman-cc779.firebaseapp.com
+[timestamp] ℹ️ Project ID: your-project-id
+[timestamp] ℹ️ Auth Domain: your-project.firebaseapp.com
 [timestamp] ℹ️ Testing Firebase initialization...
 [timestamp] ✅ Firebase initialized successfully
 [timestamp] ℹ️ Testing Firestore connection...

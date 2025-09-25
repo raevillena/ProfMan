@@ -109,6 +109,8 @@ cp env.example .env.production
 # Edit .env.development and .env.production with your configuration
 ```
 
+> **⚠️ Security Note**: Never commit your actual Firebase credentials or API keys to version control. Always use the `.env.example` files as templates and keep your real credentials in `.env.development` and `.env.production` files, which are already included in `.gitignore`.
+
 > **Note**: See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for detailed environment configuration guide.
 
 #### Environment Files Structure
