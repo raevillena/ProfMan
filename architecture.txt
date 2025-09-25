@@ -184,7 +184,7 @@ auditLogs/
 ### Running Services
 - **Backend**: http://localhost:5000 (Port 5000)
 - **Frontend**: http://localhost:5173 (Port 5173)
-- **Database**: Firebase Firestore (profman-cc779)
+- **Database**: Firebase Firestore (your-project-id)
 - **Status**: Both servers running successfully
 
 ### Recent Major Updates

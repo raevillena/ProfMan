@@ -27,8 +27,8 @@ PORT=5000
 NODE_ENV=development
 
 # Firebase Configuration
-FIREBASE_PROJECT_ID=profman-cc779
-FIREBASE_CLIENT_EMAIL=your-service-account-email@profman-cc779.iam.gserviceaccount.com
+FIREBASE_PROJECT_ID=your-firebase-project-id
+FIREBASE_CLIENT_EMAIL=your-service-account-email@your-project.iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
 
 # JWT Configuration
@@ -57,8 +57,8 @@ PORT=5000
 NODE_ENV=production
 
 # Firebase Configuration
-FIREBASE_PROJECT_ID=profman-cc779
-FIREBASE_CLIENT_EMAIL=your-production-service-account-email@profman-cc779.iam.gserviceaccount.com
+FIREBASE_PROJECT_ID=your-firebase-project-id
+FIREBASE_CLIENT_EMAIL=your-production-service-account-email@your-project.iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRODUCTION_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
 
 # JWT Configuration

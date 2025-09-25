@@ -4,12 +4,12 @@ This guide will help you complete the Firebase setup for your ProfMan applicatio
 
 ## 🔥 Firebase Project Configuration
 
-Your Firebase project `profman-cc779` is already configured in the application. Here's what you need to do:
+Follow these steps to set up your Firebase project for ProfMan:
 
 ### 1. Enable Firebase Services
 
-1. Go to [Firebase Console](https://console.firebase.google.com/project/profman-cc779)
-2. Navigate to your project: `profman-cc779`
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Create a new project or select your existing project
 
 #### Enable Authentication
 1. Go to **Authentication** > **Sign-in method**
@@ -61,21 +61,21 @@ Go to **Authentication** > **Settings** > **Authorized domains** and add:
 #### Backend Environment (`backend/.env`)
 ```env
 # Firebase Configuration
-FIREBASE_PROJECT_ID=profman-cc779
-FIREBASE_CLIENT_EMAIL=your-service-account-email@profman-cc779.iam.gserviceaccount.com
+FIREBASE_PROJECT_ID=your-firebase-project-id
+FIREBASE_CLIENT_EMAIL=your-service-account-email@your-project.iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
 ```
 
 #### Frontend Environment (`frontend/.env`)
 ```env
 # Firebase Configuration
-VITE_FIREBASE_API_KEY=AIzaSyCcSSQzNdJGpMOSpmtoxIBgKCQ_uFw2DA8
-VITE_FIREBASE_AUTH_DOMAIN=profman-cc779.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=profman-cc779
-VITE_FIREBASE_STORAGE_BUCKET=profman-cc779.firebasestorage.app
-VITE_FIREBASE_MESSAGING_SENDER_ID=89358236477
-VITE_FIREBASE_APP_ID=1:89358236477:web:d10f78cc745d38806f2354
-VITE_FIREBASE_MEASUREMENT_ID=G-05M3HRMPYD
+VITE_FIREBASE_API_KEY=your-firebase-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+VITE_FIREBASE_APP_ID=your-app-id
+VITE_FIREBASE_MEASUREMENT_ID=your-measurement-id
 ```
 
 ### 5. Test Firebase Integration

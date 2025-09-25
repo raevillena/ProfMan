@@ -134,7 +134,7 @@ profman/
    - Generate new private key
    - Download JSON and extract the values for your `.env`
 4. Configure Firebase for your project:
-   - Project ID: `profman-cc779` (already configured)
+   - Create a new Firebase project
    - Enable Authentication (Email/Password)
    - Enable Firestore Database
    - Set up security rules for development
@@ -291,18 +291,18 @@ ProfMan includes comprehensive Firebase integration for both frontend and backen
 - **Data Models**: TypeScript interfaces for Firestore documents
 
 ### Firebase Configuration
-The application is pre-configured for the `profman-cc779` Firebase project:
+Configure your Firebase project settings in the environment files:
 
 ```typescript
-// Frontend configuration
+// Frontend configuration (from .env files)
 const firebaseConfig = {
-  apiKey: "AIzaSyCcSSQzNdJGpMOSpmtoxIBgKCQ_uFw2DA8",
-  authDomain: "profman-cc779.firebaseapp.com",
-  projectId: "profman-cc779",
-  storageBucket: "profman-cc779.firebasestorage.app",
-  messagingSenderId: "89358236477",
-  appId: "1:89358236477:web:d10f78cc745d38806f2354",
-  measurementId: "G-05M3HRMPYD"
+  apiKey: process.env.VITE_FIREBASE_API_KEY,
+  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VITE_FIREBASE_APP_ID,
+  measurementId: process.env.VITE_FIREBASE_MEASUREMENT_ID
 }
 ```
 
