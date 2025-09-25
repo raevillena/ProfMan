@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const branchController_1 = require("../controllers/branchController");
+const router = (0, express_1.Router)();
+const branchController = new branchController_1.BranchController();
+router.get('/active', branchController.getActiveBranches.bind(branchController));
+router.use(auth_1.authenticate);
+router.get('/', auth_1.adminOnly, branchController.getBranches.bind(branchController));
+router.get('/:id', branchController.getBranchById.bind(branchController));
+router.post('/', auth_1.professorOrAdmin, branchController.createBranch.bind(branchController));
+router.patch('/:id', auth_1.professorOrAdmin, branchController.updateBranch.bind(branchController));
+router.delete('/:id', auth_1.professorOrAdmin, branchController.deleteBranch.bind(branchController));
+router.post('/:id/restore', auth_1.adminOnly, branchController.restoreBranch.bind(branchController));
+router.delete('/:id/permanent', auth_1.adminOnly, branchController.permanentlyDeleteBranch.bind(branchController));
+router.get('/professor/:professorId', auth_1.professorOrAdmin, branchController.getBranchesByProfessor.bind(branchController));
+router.get('/subject/:subjectId', auth_1.professorOrAdmin, branchController.getBranchesBySubject.bind(branchController));
+router.post('/:id/clone', auth_1.professorOrAdmin, branchController.cloneBranch.bind(branchController));
+exports.default = router;
+//# sourceMappingURL=branches.js.map

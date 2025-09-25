@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const examController_1 = require("../controllers/examController");
+const router = (0, express_1.Router)();
+const examController = new examController_1.ExamController();
+router.use(auth_1.authenticate);
+router.get('/professor', examController.getExamsByProfessor.bind(examController));
+router.get('/branch/:branchId', examController.getExamsByBranch.bind(examController));
+router.get('/:id', examController.getExamById.bind(examController));
+router.post('/', auth_1.professorOrAdmin, examController.createExam.bind(examController));
+router.patch('/:id', auth_1.professorOrAdmin, examController.updateExam.bind(examController));
+router.delete('/:id', auth_1.professorOrAdmin, examController.deleteExam.bind(examController));
+router.post('/:id/submit', examController.submitExam.bind(examController));
+router.get('/:id/submissions', auth_1.professorOrAdmin, examController.getExamSubmissions.bind(examController));
+router.patch('/submissions/:submissionId/grade', auth_1.professorOrAdmin, examController.gradeExamSubmission.bind(examController));
+router.post('/upload', auth_1.professorOrAdmin, examController_1.upload.single('file'), examController.uploadExamFile.bind(examController));
+exports.default = router;
+//# sourceMappingURL=exams.js.map

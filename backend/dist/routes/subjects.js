@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const subjectController_1 = require("../controllers/subjectController");
+const router = (0, express_1.Router)();
+const subjectController = new subjectController_1.SubjectController();
+router.get('/active', subjectController.getActiveSubjects.bind(subjectController));
+router.get('/code/:code', subjectController.getSubjectByCode.bind(subjectController));
+router.use(auth_1.authenticate);
+router.get('/', auth_1.adminOnly, subjectController.getSubjects.bind(subjectController));
+router.post('/', auth_1.adminOnly, subjectController.createSubject.bind(subjectController));
+router.post('/:id/assign', auth_1.adminOnly, subjectController.assignSubjectToProfessors.bind(subjectController));
+router.get('/:id/assignments', auth_1.adminOnly, subjectController.getAssignedProfessors.bind(subjectController));
+router.get('/assigned/:professorId', auth_1.adminOnly, subjectController.getSubjectsAssignedToProfessor.bind(subjectController));
+router.delete('/:id/assignments/:professorId', auth_1.adminOnly, subjectController.removeProfessorAssignment.bind(subjectController));
+router.get('/professor/:professorId', auth_1.professorOrAdmin, subjectController.getSubjectsByProfessor.bind(subjectController));
+router.get('/:id', subjectController.getSubjectById.bind(subjectController));
+router.patch('/:id', auth_1.adminOnly, subjectController.updateSubject.bind(subjectController));
+router.delete('/:id', auth_1.adminOnly, subjectController.deleteSubject.bind(subjectController));
+router.post('/:id/restore', auth_1.adminOnly, subjectController.restoreSubject.bind(subjectController));
+router.delete('/:id/permanent', auth_1.adminOnly, subjectController.permanentlyDeleteSubject.bind(subjectController));
+exports.default = router;
+//# sourceMappingURL=subjects.js.map

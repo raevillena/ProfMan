@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const adminController_1 = require("../controllers/adminController");
+const router = (0, express_1.Router)();
+const adminController = new adminController_1.AdminController();
+router.use(auth_1.authenticate);
+router.use(auth_1.adminOnly);
+router.get('/users', adminController.getUsers.bind(adminController));
+router.get('/users/:id', adminController.getUserById.bind(adminController));
+router.post('/users', adminController.createUser.bind(adminController));
+router.patch('/users/:id', adminController.updateUser.bind(adminController));
+router.delete('/users/:id', adminController.deleteUser.bind(adminController));
+router.post('/restore/:id', adminController.restoreUser.bind(adminController));
+router.delete('/users/:id/permanent', adminController.permanentlyDeleteUser.bind(adminController));
+router.get('/professors', adminController.getProfessors.bind(adminController));
+router.get('/students', adminController.getStudents.bind(adminController));
+exports.default = router;
+//# sourceMappingURL=admin.js.map

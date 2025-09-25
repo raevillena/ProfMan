@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const quizController_1 = require("../controllers/quizController");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+const quizController = new quizController_1.QuizController();
+router.use(auth_1.authenticate);
+router.post('/', auth_1.professorOrAdmin, quizController.createQuiz.bind(quizController));
+router.patch('/:id', auth_1.professorOrAdmin, quizController.updateQuiz.bind(quizController));
+router.delete('/:id', auth_1.professorOrAdmin, quizController.deleteQuiz.bind(quizController));
+router.post('/:id/restore', auth_1.adminOnly, quizController.restoreQuiz.bind(quizController));
+router.delete('/:id/permanent', auth_1.adminOnly, quizController.permanentlyDeleteQuiz.bind(quizController));
+router.get('/', auth_1.anyRole, quizController.getQuizzes.bind(quizController));
+router.get('/:id', auth_1.anyRole, quizController.getQuizById.bind(quizController));
+router.get('/branch/:branchId', auth_1.anyRole, quizController.getQuizzesByBranch.bind(quizController));
+router.post('/submit', auth_1.anyRole, quizController.submitQuizAttempt.bind(quizController));
+router.get('/attempts/student/:studentId', auth_1.anyRole, quizController.getQuizAttemptsByStudent.bind(quizController));
+router.get('/attempts/quiz/:quizId', auth_1.professorOrAdmin, quizController.getQuizAttemptsByQuiz.bind(quizController));
+router.get('/attempts/best/:studentId/:quizId', auth_1.anyRole, quizController.getBestQuizAttempt.bind(quizController));
+exports.default = router;
+//# sourceMappingURL=quizzes.js.map
